@@ -1,6 +1,6 @@
 import 'animate.css/animate.min.css'; // Importación de animaciones 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import FOOTER from '../PAGINAPRINCIPAL/FOOTER';
@@ -17,6 +17,9 @@ function LOGIN({ loginButtonRef }) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
+  
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleLoginUsernameChange = (e) => setUsername(e.target.value);
   const handleLoginPasswordChange = (e) => setLoginPassword(e.target.value);
@@ -42,7 +45,7 @@ function LOGIN({ loginButtonRef }) {
 
     try {
       // Fetch de los usuarios existentes para verificar duplicados
-      const response = await fetch("http://localhost:8080/usuario");
+      const response = await fetch(`${API_URL}/usuario`);
       if (!response.ok) {
         alert("Error en el servidor al verificar usuarios.");
         return;
@@ -58,7 +61,7 @@ function LOGIN({ loginButtonRef }) {
       }
 
       // Crear el usuario si pasa todas las validaciones
-      const registerResponse = await fetch("http://localhost:8080/usuario/register", {
+      const registerResponse = await fetch(`${API_URL}/usuario/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -89,7 +92,7 @@ function LOGIN({ loginButtonRef }) {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://localhost:8080/usuario");
+      const response = await fetch(`${API_URL}/usuario`);
 
       if (!response.ok) {
         console.error(`Error fetching users: ${response.status} ${response.statusText}`);

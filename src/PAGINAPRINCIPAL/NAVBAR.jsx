@@ -9,7 +9,7 @@ function NAVBAR({ scrollToLogin }) {
     const dispatch = useDispatch();
     const user = useSelector(state => state.user);
     const progreso = useSelector(state => state.progreso);
-
+      const API_URL = import.meta.env.VITE_API_URL
     // Calcular la suma de puntos
     const totalPuntos = progreso.reduce((acc, curr) => acc + curr.examenPuntos, 0);
 
@@ -17,7 +17,7 @@ function NAVBAR({ scrollToLogin }) {
         const fetchProgreso = async () => {
             if (user?.id) {
                 try {
-                    const response = await fetch(`http://localhost:8080/progreso/obtenerUsuario/${user.id}`);
+                    const response = await fetch(`${API_URL}/progreso/obtenerUsuario/${user.id}`);
                     const data = await response.json();
                     // Despachar la acción directamente desde el componente
                     dispatch({

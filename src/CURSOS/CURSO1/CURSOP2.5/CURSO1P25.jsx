@@ -10,11 +10,12 @@ function CURSO1P25() {
   const navigate = useNavigate(); // necesario para usar navigate
   const [progressCreated, setProgressCreated] = useState(false);
   const [data, setData] = useState(null);
+  const API_URL = import.meta.env.VITE_API_URL
 
   // codigo para moverse a la siguiente pagina y crear progreso
   const actualizarProgreso = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/progreso/actualizar/${user.id}/1`, {
+      const response = await fetch(`${API_URL}/progreso/actualizar/${user.id}/1`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"

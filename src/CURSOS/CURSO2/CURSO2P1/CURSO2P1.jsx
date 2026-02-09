@@ -9,13 +9,14 @@ function CURSO2P1() {
   const user = useSelector((state) => state.user); //agarra variable usuario del estado global
   const navigate = useNavigate(); // necesario para usar navigate
   const [progressCreated, setProgressCreated] = useState(false);
+  const API_URL = import.meta.env.VITE_API_URL
 
   // codigo para moverse a la siguiente pagina y crear progreso
   const handleNextStage = async () => {
     if (!progressCreated && user && user.id) { // verifica si hay usuario
       try {
         // hace un fetch (agarra del back) para ver si  ya se creo progreso
-        const response = await fetch(`http://localhost:8080/progreso/obtenerUsuario/${user.id}`);
+        const response = await fetch(`${API_URL}/progreso/obtenerUsuario/${user.id}`);
         const progressData = await response.json();
 
         // revisa si el curso especifico ya se creo 
@@ -24,7 +25,7 @@ function CURSO2P1() {
 
         if (!existingCourse) {
           // Crea el progreso de un curso especifico para un usuario especifico
-          await fetch('http://localhost:8080/progreso/crear', {
+          await fetch(`${API_URL}/progreso/crear`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

@@ -64,7 +64,7 @@ function ExamenFinal4() {
   const [respuestas, setRespuestas] = useState(Array(preguntas.length).fill(null)); // Estado para almacenar las respuestas del usuario
   const [puntaje, setPuntaje] = useState(0); // Estado para almacenar el puntaje del examen
   const [completado, setCompletado] = useState(false); // Estado para indicar si el examen ha sido completado
-
+  const API_URL = import.meta.env.VITE_API_URL
   // Función para manejar el cambio de respuesta en cada pregunta
   const manejarCambioRespuesta = (index, valor) => {
     const nuevasRespuestas = [...respuestas]; // Copia las respuestas actuales
@@ -91,7 +91,7 @@ function ExamenFinal4() {
 
     // Envía el progreso del usuario al backend (servidor)
     try {
-      const response = await fetch(`http://localhost:8080/progreso/actualizar/${user.id}/4`, {
+      const response = await fetch(`${API_URL}/progreso/actualizar/${user.id}/4`, {
         method: "PUT", // Método HTTP para actualizar datos
         headers: {
           "Content-Type": "application/json" // Indica que el contenido es JSON

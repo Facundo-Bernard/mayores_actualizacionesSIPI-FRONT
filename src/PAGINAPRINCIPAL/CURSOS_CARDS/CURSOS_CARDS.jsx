@@ -18,6 +18,8 @@ function CURSOS_CARDS() {
     const [progresoCurso5, setprogresoCurso5] = useState(0);
     const [progresoCurso6, setprogresoCurso6] = useState(0);
 
+      const API_URL = import.meta.env.VITE_API_URL;
+
     useEffect(() => {
         const fetchProgreso = async () => {
             try {
@@ -26,7 +28,7 @@ function CURSOS_CARDS() {
                     return;
                 }
 
-                const response = await fetch(`http://localhost:8080/progreso/obtenerUsuario/${user.id}`);
+                const response = await fetch(`${API_URL}/progreso/obtenerUsuario/${user.id}`);
                 if (!response.ok) throw new Error("Error en la respuesta del servidor");
 
                 const data = await response.json();

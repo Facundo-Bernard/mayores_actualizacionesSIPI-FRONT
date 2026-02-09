@@ -45,13 +45,14 @@ function CURSO6P2() {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const [data, setData] = useState(null);
+    const API_URL = import.meta.env.VITE_API_URL
 
   // al cargar el componente guarda en data el progreso actual del usuario
   // esto actualmente no se esta utilizando para nada especifico pero podria servir a futuro
   useEffect(() => {
     const agarrarProgresoUsuario = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/progreso/obtenerUsuario/${user.id}`);
+        const response = await fetch(`${API_URL}/progreso/obtenerUsuario/${user.id}`);
         if (response.ok) {
           const result = await response.json();
           setData(result.content);
@@ -69,7 +70,7 @@ function CURSO6P2() {
   // al tocar el boton actualiza el progreso
   const actualizarProgreso = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/progreso/actualizar/${user.id}/6`, {
+      const response = await fetch(`${API_URL}/progreso/actualizar/${user.id}/6`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"

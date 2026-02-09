@@ -10,7 +10,7 @@ function SuscripcionBlack() {
             <div className="subscription-container d-flex align-items-center justify-content-center">
                 <div className="card cardblack subscription-card text-center">
                     <h1 className="subscription-title mb-4">Servicio Black</h1>
-                    <p className="subscription-price mb-4">$3 <span>USD/mes</span></p>
+                    <p className="subscription-price mb-4">$1,06 <span>USD/mes</span></p>
                     <p className="subscription-description">
                         ¡Disfruta de beneficios exclusivos con Servicio Black! Accede a contenido premium, soporte personalizado, y mucho más.
                     </p>

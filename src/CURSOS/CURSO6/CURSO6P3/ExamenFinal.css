@@ -1,0 +1,46 @@
+p{
+  font-size: 150%;
+}
+.examen-final-container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  .preguntas-container {
+    margin-bottom: 20px; /* Espacio entre las preguntas y el botón */
+  }
+  
+  .pregunta {
+    background-color: #fff; /* Fondo blanco para cada pregunta */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 15px; /* Espacio entre preguntas */
+    border: 1px solid #ddd; /* Borde gris claro */
+  }
+  
+  .form-check-input {
+    margin-right: 10px; /* Espacio a la derecha del input */
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Color de fondo del botón */
+    border-color: #007bff; /* Color del borde del botón */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+    border-color: #0056b3; /* Color del borde al pasar el mouse */
+  }
+  
+  .resultado {
+    background-color: #e9ffe9; /* Fondo verde claro para el resultado */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #c3e6cb; /* Borde verde claro */
+    margin-top: 20px; /* Espacio encima del resultado */
+  }
+  

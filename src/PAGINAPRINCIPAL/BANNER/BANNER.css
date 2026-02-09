@@ -1,0 +1,66 @@
+p{
+  font-size: 150%;
+}
+.banner-container {
+    position: relative;
+    background-image: url('../../assets/bannerBackground.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    min-height: 400px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 1%;
+  }
+  
+  .banner-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    backdrop-filter: blur(8px); /* Blur effect */
+    z-index: 1;
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .banner-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .banner-content p {
+    font-size: 1.25rem;
+    margin-top: 10px;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Ajusta entre 2rem y 3rem, basado en el ancho del viewport */
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Asegura que el texto esté centrado en todas las resoluciones */
+  }
+  
+  
+  @media (max-width: 768px) {
+    .banner-content h1 {
+      font-size: 2rem;
+    }
+    
+    .banner-content p {
+      font-size: 1rem;
+    }
+  }
+  

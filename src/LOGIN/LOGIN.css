@@ -1,0 +1,33 @@
+p{
+  font-size: 150%;
+}
+
+.blurred-section {
+    background-image: url('../assets/loginfoto.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    height: 70vh;
+  }
+  
+  .blurred-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen */
+    z-index: 1;
+  }
+  
+  .blurred-section h2,
+  .blurred-section p {
+    position: relative;
+    z-index: 2;
+  }
+  

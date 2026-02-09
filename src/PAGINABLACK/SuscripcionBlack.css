@@ -1,0 +1,127 @@
+/* SuscripcionBlack.css */
+
+p{
+    font-size: 170%;
+}
+:root {
+    --primary-color: #ffbe0b;
+    --background-dark: #1f1f1f;
+    --text-light: #f5f5f5;
+    --text-highlight: #ffbe0b;
+    --card-background: rgba(40, 40, 40, 0.95);
+}
+
+
+.cardblack {
+    background-color: rgb(51, 50, 50) !important;
+    /* background-color: white; */
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+}
+
+
+
+.subscription-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: radial-gradient(circle, #181818, #121212);
+    
+}
+
+.subscription-card {
+    max-width: 500px;
+    background: var(--card-background);
+    color: var(--text-light);
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 5%;
+}
+
+.subscription-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.9);
+}
+
+.subscription-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-highlight);
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+.subscription-price {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.subscription-price span {
+    font-size: 2rem;
+    color: #cfcfcf;
+}
+
+.subscription-description {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-top: 1rem;
+}
+
+.feature-list ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.40rem;
+    color: #e0e0e0;
+}
+
+.feature-list li {
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+}
+
+.feature-list li:hover {
+    color: var(--primary-color);
+}
+
+.subscribe-button {
+    background: var(--primary-color);
+    color: var(--background-dark);
+    font-weight: bold;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    transition: background 0.3s ease, color 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 190, 11, 0.3);
+}
+
+.subscribe-button:hover {
+    background: #ffd700;
+    color: #121212;
+    box-shadow: 0 8px 30px rgba(255, 190, 11, 0.5);
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

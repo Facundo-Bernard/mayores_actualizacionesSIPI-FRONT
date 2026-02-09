@@ -1,0 +1,77 @@
+.curso-outer-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f2f5; /* Fondo suave */
+    min-height: 100vh;
+  }
+  
+  .curso-inner-container {
+    background-color: #fff;
+    padding: 40px;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .curso-header {
+    margin-bottom: 50px;
+  }
+  
+  .curso-image-container {
+    margin: 30px 0;
+  }
+  
+  .curso-image {
+    border-radius: 15px;
+    max-width: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .curso-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .curso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .curso-extra-info {
+    background-color: #fff;
+    color: #343a40;
+  }
+  
+  .curso-extra-info h2,
+  .curso-extra-info h3 {
+    color: #007bff;
+  }
+  
+  .curso-texto-educativo {
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+  }
+  
+  .curso-resources ul {
+    list-style-type: none;
+  }
+  
+  .curso-resources ul li {
+    margin-bottom: 10px;
+  }
+  
+  .curso-resources ul li a {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .curso-resources ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .botoncurso{
+    color: #f0f2f5;
+  }

@@ -66,7 +66,7 @@ function CURSOS_CARDS() {
 
     const cursos = [
         {
-            title: 'Manejo de Mails',
+            title: 'Manejo de Mails.',
             company: 'Mayores Actualizaciones',
             applied: progresoCurso1,
             capacity: 4,

@@ -20,6 +20,7 @@ function EduCard({ title, text, imgUrl }) {
     </div>
   );
 }
+
 // componente seccion video
 function ExampleSection({ title, description, videoUrl }) {
   return (
@@ -27,13 +28,13 @@ function ExampleSection({ title, description, videoUrl }) {
       <h3>{title}</h3>
       <p>{description}</p>
       <div className="video-container text-center">
-        <iframe 
-          width="560" 
-          height="315" 
-          src={videoUrl} 
-          title="Example video" 
-          frameBorder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        <iframe
+          width="560"
+          height="315"
+          src={videoUrl}
+          title="Example video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
       </div>
@@ -45,7 +46,7 @@ function CURSO1P2() {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const [data, setData] = useState(null);
-  const API_URL = import.meta.env.VITE_API_URL
+  const API_URL = import.meta.env.VITE_API_URL;
 
   // al cargar el componente guarda en data el progreso actual del usuario
   // esto actualmente no se esta utilizando para nada especifico pero podria servir a futuro
@@ -84,7 +85,7 @@ function CURSO1P2() {
           cursoId: 1 // viejo
         })
       });
-      
+
       if (response.ok) {
         const updatedData = await response.json();
         setData(updatedData);
@@ -95,48 +96,70 @@ function CURSO1P2() {
     } catch (error) {
       console.error("Error en actualizarProgreso:", error);
     }
-    navigate('/curso1-3')
-    
+    navigate('/curso1-3');
   };
 
   const handleAnterior = () => {
-    navigate('/curso1-25')
-  }
+    navigate('/curso1-25');
+  };
 
   return (
     <div className="curso-outer-container">
       <div className="curso-inner-container">
         <header className="curso-header text-center">
-          <h1 className="display-4 animate__animated animate__fadeIn">Bienvenido al curso de manejo de correos electrónicos.</h1>
-          <p className="lead animate__animated animate__fadeIn">¡Aprenda a acceder y navegar dentro de su correo electrónico, reconociendo las diferentes secciones!</p>
+          <div className="curso-pill animate__animated animate__fadeIn">Curso 1 · Continuación</div>
+
+          <h1 className="display-4 animate__animated animate__fadeIn">
+            Bienvenido al curso de manejo de correos electrónicos.
+          </h1>
+
+          <p className="lead animate__animated animate__fadeIn">
+            ¡Aprenda a acceder y navegar dentro de su correo electrónico, reconociendo las diferentes secciones!
+          </p>
         </header>
 
         <div className="curso-content animate__animated animate__fadeIn">
           <div className="curso-image-container text-center">
-            <img src="https://assets.easymailing.com/cms/2023/04/28163427/partes-de-un-email-detalle.jpg" alt="Curso Interactivo" className="curso-image img-fluid" />
+            <img
+              src="https://assets.easymailing.com/cms/2023/04/28163427/partes-de-un-email-detalle.jpg"
+              alt="Curso Interactivo"
+              className="curso-image img-fluid"
+              loading="lazy"
+            />
           </div>
 
-          <div className="">
-              <div className="curso-card p-3 border rounded shadow-sm">
-                <h3>Módulo 4: Leer y responder correos electrónicos.</h3>
-                <p>Este módulo está enfocado en cómo leer, responder y reenviar correos. Para leer un correo recibido, solo necesita hacer clic en el mensaje en su bandeja de entrada. Esto abrirá el correo en una ventana, permitiéndole ver el contenido.
+          <div className="curso-cards-stack">
+            <div className="curso-card p-3 border rounded shadow-sm">
+              <h3>Módulo 4: Leer y responder correos electrónicos.</h3>
+              <p>
+                Este módulo está enfocado en cómo leer, responder y reenviar correos. Para leer un correo recibido, solo necesita hacer clic en el mensaje en su bandeja de entrada. Esto abrirá el correo en una ventana, permitiéndole ver el contenido.
                 Si desea responder a un correo, puede utilizar la opción "Responder", que aparece en la parte inferior o superior de la ventana del mensaje. Esta opción abrirá una nueva ventana de mensaje con el campo "Para" ya completado con la dirección del remitente. Escriba su respuesta en el cuadro de mensaje y luego haga clic en "Enviar".
-                Si, en lugar de responder, quiere reenviar el correo a otra persona, puede utilizar la opción "Reenviar", que aparece en la misma sección de respuesta. Al seleccionar "Reenviar", podrá agregar la dirección de otra persona en el campo "Para" para enviarle una copia del correo original. Finalmente, haga clic en "Enviar"</p>
-              </div>
-              <div className="">
-              <div className="curso-card p-3 border rounded shadow-sm">
-                <h3>Módulo 5: Eliminación y organización de correos.</h3>
-                <p>Este módulo le ayudará a mantener su bandeja de entrada organizada, eliminando correos innecesarios y clasificando los importantes. Para eliminar un correo, vaya a su bandeja de entrada y seleccione el mensaje que desea eliminar. Luego, haga clic en el ícono de “Eliminar” (normalmente representado por un tacho de basura). El correo se moverá a la carpeta de Eliminados o Papelera.
+                Si, en lugar de responder, quiere reenviar el correo a otra persona, puede utilizar la opción "Reenviar", que aparece en la misma sección de respuesta. Al seleccionar "Reenviar", podrá agregar la dirección de otra persona en el campo "Para" para enviarle una copia del correo original. Finalmente, haga clic en "Enviar"
+              </p>
+            </div>
+
+            <div className="curso-card p-3 border rounded shadow-sm">
+              <h3>Módulo 5: Eliminación y organización de correos.</h3>
+              <p>
+                Este módulo le ayudará a mantener su bandeja de entrada organizada, eliminando correos innecesarios y clasificando los importantes. Para eliminar un correo, vaya a su bandeja de entrada y seleccione el mensaje que desea eliminar. Luego, haga clic en el ícono de “Eliminar” (normalmente representado por un tacho de basura). El correo se moverá a la carpeta de Eliminados o Papelera.
                 Además, puede organizar sus correos importantes creando carpetas o etiquetas. En la barra lateral izquierda, encontrará la opción para crear una “Nueva carpeta” o “Crear etiqueta”. Asigne un nombre a la carpeta, como “Familia” o “Trabajo”. Luego, para mover un correo a esa carpeta, ábralo y seleccione la opción “Mover a” o “Etiquetar”, eligiendo la carpeta creada. Esto le ayudará a clasificar sus correos y encontrarlos más fácilmente.
                 Si accidentalmente elimina un correo, puede recuperarlo de la papelera. Para esto, solo tiene que ir a la carpeta de Papelera o Eliminados, buscar el correo y seleccionarlo. Luego, elija la opción de “Mover a” o “Recuperar” y envíelo a la carpeta deseada, como “Recibidos”.
-                </p>
-              </div>
-          <button onClick={handleAnterior} className="btn btn-primary mt-4">Volver al paso anterior</button>
-          <button onClick={actualizarProgreso} className="btn btn-primary mt-4">Ir al examen</button>
+              </p>
+            </div>
+
+            <div className="curso-actions">
+              <button onClick={handleAnterior} className="btn btn-outline-dark mt-3 curso-btn">
+                Volver al paso anterior
+              </button>
+              <button onClick={actualizarProgreso} className="btn btn-dark mt-3 curso-btn">
+                Ir al examen
+              </button>
+            </div>
+
+            {/* data queda disponible para futuro, no lo mostramos para no ensuciar la UI */}
+          </div>
         </div>
       </div>
-    </div>
-    </div>
     </div>
   );
 }

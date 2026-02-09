@@ -1,85 +1,177 @@
-p{
-  font-size: 150%;
+/* Base */
+.c1-page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 28px 16px;
+  color: #0f172a;
 }
 
-.curso-outer-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f0f2f5; /* Fondo suave */
-    min-height: 100vh;
-  }
-  
-  .curso-inner-container {
-    background-color: #fff;
-    padding: 40px;
-    max-width: 1000px;
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .curso-header {
-    margin-bottom: 50px;
-  }
-  
-  .curso-image-container {
-    margin: 30px 0;
-  }
-  
-  .curso-image {
-    border-radius: 15px;
-    max-width: 100%;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .curso-card {
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .curso-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .curso-extra-info {
-    background-color: #fff;
-    color: #343a40;
-  }
-  
-  .curso-extra-info h2,
-  .curso-extra-info h3 {
-    color: #007bff;
-  }
-  
-  .curso-texto-educativo {
-    background-color: #f8f9fa;
-    color: #343a40;
-    line-height: 1.6;
-  }
-  
-  .curso-resources ul {
-    list-style-type: none;
-  }
-  
-  .curso-resources ul li {
-    margin-bottom: 10px;
-  }
-  
-  .curso-resources ul li a {
-    font-weight: bold;
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .curso-resources ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  .botoncurso{
-    color: #f0f2f5;
+/* Centered shell */
+.c1-shell {
+  max-width: 1050px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #eef2f7;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  padding: 28px;
+}
+
+/* Header */
+.c1-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.c1-badge {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #e8edf5;
+  background: #fbfcfe;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.c1-title {
+  margin: 14px 0 8px;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.c1-subtitle {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Hero */
+.c1-hero {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 16px;
+  align-items: stretch;
+  margin: 20px 0 22px;
+}
+
+.c1-hero-imgWrap {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #eef2f7;
+  background: #ffffff;
+}
+
+.c1-hero-img {
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.c1-hero-card {
+  border: 1px solid #eef2f7;
+  border-radius: 16px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.c1-hero-title {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+
+.c1-hero-text {
+  margin: 0;
+  color: #475569;
+  line-height: 1.65;
+}
+
+/* Grid cards */
+.c1-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.c1-card {
+  border: 1px solid #eef2f7;
+  border-radius: 16px;
+  padding: 18px;
+  background: #ffffff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.c1-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.c1-card-title {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.c1-card-text {
+  margin: 0;
+  color: #334155;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+/* Callout */
+.c1-callout {
+  margin-top: 18px;
+  border-radius: 16px;
+  border: 1px solid #eef2f7;
+  background: #fbfcfe;
+  padding: 18px;
+  text-align: center;
+}
+
+.c1-callout-title {
+  margin: 0 0 8px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.c1-callout-text {
+  margin: 0;
+  color: #475569;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Actions */
+.c1-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.c1-btn {
+  padding: 10px 16px !important;
+  border-radius: 12px !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .c1-hero {
+    grid-template-columns: 1fr;
   }
 
-  .btn{
-    margin-right: 1rem;
+  .c1-grid {
+    grid-template-columns: 1fr;
   }
+
+  .c1-shell {
+    padding: 18px;
+  }
+}

@@ -25,7 +25,7 @@ function SuscripcionBlack() {
 
                     {/* Usa un elemento <a> para abrir el enlace en una nueva pestaña */}
                     <a
-                        href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c938084930f529801933bedc63f0dcc"
+                        href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=bafa116d9c0e42bda5ece8a10bbaddab"
                         className="btn subscribe-button mt-4"
                         target="_blank"
                         rel="noopener noreferrer"
